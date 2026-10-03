@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nidhi Reddy | Finance Student & Aspiring Investment Banker</title>
+<meta name="description" content="Portfolio of Nidhi Reddy: finance student with private equity, investment banking, and investment analysis experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --surface: #ffffff;
+    --ink: #12202f;
+    --muted: #4d5d6e;
+    --rule: #c9d3dd;
+    --accent: #1f6f78;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1822;
+      --surface: #16222f;
+      --ink: #e8eef4;
+      --muted: #a2b1c1;
+      --rule: #2d3d4f;
+      --accent: #5cc0c9;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .skip {
+    position: absolute; left: -999px; top: 0;
+    background: var(--ink); color: var(--bg); padding: .6rem 1rem; z-index: 20;
+  }
+  .skip:focus { left: 0; }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Header */
+  header.site {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  header.site .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; min-height: 3.5rem; flex-wrap: wrap;
+  }
+  .brand { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+  nav ul { list-style: none; display: flex; gap: 1.4rem; margin: 0; padding: 0; flex-wrap: wrap; }
+  nav a { color: var(--muted); text-decoration: none; font-size: .95rem; font-weight: 500; padding: .25rem 0; }
+  nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 6px; }
+
+  /* Hero */
+  .hero { padding: 5rem 0 4rem; }
+  .hero .name { margin: 0 0 1.25rem; font-size: 1.05rem; font-weight: 600; color: var(--accent); }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 5.2vw, 3.4rem);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    margin: 0;
+    max-width: 22em;
+  }
+  .hero .actions { margin-top: 2.25rem; display: flex; gap: .75rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: .7rem 1.25rem; border-radius: 2px;
+    font-weight: 600; font-size: .98rem; text-decoration: none;
+    border: 1px solid var(--ink);
+  }
+  .btn.primary { background: var(--ink); color: var(--bg); }
+  .btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+  .btn.secondary { color: var(--ink); background: transparent; }
+  .btn.secondary:hover { background: var(--surface); }
+
+  /* Sections */
+  section { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  section h2 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 1.8rem; margin: 0 0 .5rem; letter-spacing: -0.005em;
+  }
+  .lede { color: var(--muted); margin: 0 0 2.25rem; max-width: 40em; }
+
+  /* About */
+  .about p { max-width: 38em; margin: 0 0 1rem; }
+
+  /* Experience timeline */
+  .timeline { list-style: none; margin: 0; padding: 0 0 0 1.75rem; border-left: 2px solid var(--rule); }
+  .timeline li { position: relative; padding-bottom: 2.25rem; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: ""; position: absolute; left: calc(-1.75rem - 7px); top: .5rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--accent);
+  }
+  .timeline h3 { margin: 0; font-size: 1.15rem; font-weight: 600; }
+  .timeline .org { margin: .1rem 0 .6rem; color: var(--muted); font-weight: 500; }
+  .timeline ul { margin: 0; padding-left: 1.1rem; max-width: 40em; }
+  .timeline ul li { padding: 0 0 .35rem; position: static; }
+  .timeline ul li::before { display: none; }
+
+  /* Skills */
+  .skills { margin: 0; }
+  .skill-row {
+    display: grid; grid-template-columns: 13rem 1fr; gap: 1rem 2rem;
+    padding: 1.1rem 0; border-top: 1px solid var(--rule);
+  }
+  .skill-row:last-child { border-bottom: 1px solid var(--rule); }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; color: var(--ink); }
+  .skills dd span { display: inline-block; margin: 0 .9rem .15rem 0; }
+
+  /* Projects as deal tombstones */
+  .stones { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 1.5rem; }
+  .stone { background: var(--surface); border: 1px solid var(--ink); padding: 6px; display: flex; }
+  .stone-inner {
+    border: 1px solid var(--ink); padding: 1.75rem 1.4rem 1.5rem;
+    text-align: center; display: flex; flex-direction: column; width: 100%;
+  }
+  .stone h3 { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; line-height: 1.25; margin: 0 0 .35rem; }
+  .stone .kind { margin: 0 0 1.1rem; color: var(--accent); font-weight: 600; font-size: .92rem; }
+  .stone .desc { margin: 0 0 1.1rem; font-size: .98rem; text-align: left; }
+  .stone .tools { margin: auto 0 1.1rem; padding-top: .9rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+  .stone .links { display: flex; justify-content: center; gap: 1.25rem; font-weight: 600; font-size: .95rem; }
+
+  /* Contact */
+  .contact ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.75rem; flex-wrap: wrap; }
+  .contact a { font-weight: 600; }
+
+  footer { border-top: 1px solid var(--rule); padding: 1.75rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 3rem 0 2.5rem; }
+    .skill-row { grid-template-columns: 1fr; gap: .35rem; }
+    header.site .wrap { padding-top: .6rem; padding-bottom: .6rem; }
+    nav ul { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Nidhi Reddy</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap hero" id="top">
+    <p class="name">Nidhi Reddy</p>
+    <!-- Personal statement: one sentence -->
+    <h1>Finance student with private equity, investment banking, and investment analysis experience, building a career in investment banking.</h1>
+    <div class="actions">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn secondary" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p>I study finance and have spent my early career working across three sides of the industry: private equity, investment banking, and investment management. Each role taught me something different about how capital gets valued, raised, and put to work.</p>
+      <p>I am looking for an investment banking analyst role where I can build financial models, support live transactions, and keep learning from strong deal teams.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="lede">Three roles across private equity, investment banking, and investment management.</p>
+      <ol class="timeline">
+        <li>
+          <h3>Private Equity Intern</h3>
+          <p class="org">Blackview</p>
+          <ul>
+            <li>Screened potential investments and summarized each opportunity for the investment team.</li>
+            <li>Built financial models and company profiles to support due diligence.</li>
+            <li>Researched target industries, competitors, and market size.</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Investment Banking Analyst</h3>
+          <p class="org">Munera</p>
+          <ul>
+            <li>Prepared valuation analyses, including DCF and comparable company models.</li>
+            <li>Drafted pitch book and presentation materials for client meetings.</li>
+            <li>Supported deal execution with data gathering, diligence, and financial analysis.</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Investment Analyst</h3>
+          <p class="org">Together Wealth</p>
+          <ul>
+            <li>Researched and evaluated investment opportunities for client portfolios.</li>
+            <li>Tracked portfolio performance and prepared summaries of results.</li>
+            <li>Monitored markets and economic trends to inform investment recommendations.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="lede">What I can do on day one of an investment banking analyst role.</p>
+      <dl class="skills">
+        <div class="skill-row">
+          <dt>Valuation and modeling</dt>
+          <dd>
+            <span>Discounted cash flow (DCF)</span>
+            <span>Comparable company analysis</span>
+            <span>Precedent transactions</span>
+            <span>Three-statement models</span>
+            <span>LBO fundamentals</span>
+          </dd>
+        </div>
+        <div class="skill-row">
+          <dt>Deal and investment work</dt>
+          <dd>
+            <span>Due diligence</span>
+            <span>Pitch books</span>
+            <span>Industry and company research</span>
+            <span>Portfolio analysis</span>
+            <span>Investment memos</span>
+          </dd>
+        </div>
+        <div class="skill-row">
+          <dt>Tools</dt>
+          <dd>
+            <span>Excel</span>
+            <span>PowerPoint</span>
+            <span>Bloomberg</span>
+            <span>Capital IQ</span>
+            <span>PitchBook</span>
+          </dd>
+        </div>
+        <div class="skill-row">
+          <dt>Professional strengths</dt>
+          <dd>
+            <span>Attention to detail</span>
+            <span>Clear written communication</span>
+            <span>Working under tight deadlines</span>
+            <span>Team collaboration</span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="lede">Three finance projects, laid out like deal tombstones. Each opens the full work as a PDF.</p>
+      <div class="stones">
+
+        <article class="stone">
+          <div class="stone-inner">
+            <h3>Bristol Myers Squibb Equity Analysis</h3>
+            <p class="kind">Equity research</p>
+            <p class="desc">Built upside and downside projections for revenue, margins and 2030 P/E, benchmarked against pharma and biotech peers. Compared the expected five-year return on a $100mm investment in the stock (6.67% upside, -3.92% downside) with BMY debt and a 5-year U.S. Treasury.</p>
+            <p class="tools">Financial modeling, peer benchmarking, scenario analysis</p>
+            <div class="links"><a href="bristol-myers-squibb.pdf" target="_blank" rel="noopener">View report (PDF)</a></div>
+          </div>
+        </article>
+
+        <article class="stone">
+          <div class="stone-inner">
+            <h3>TransMedics Investment Pitch</h3>
+            <p class="kind">Buy recommendation, team of five analysts</p>
+            <p class="desc">Recommended a Buy on TransMedics, maker of the Organ Care System. Covered the business model, SWOT, Porter's Five Forces, growth drivers, risks and mitigants, an income statement, a revenue buildout and comparable companies.</p>
+            <p class="tools">Industry analysis, revenue buildout, comps</p>
+            <div class="links"><a href="transmedics.pdf" target="_blank" rel="noopener">View deck (PDF)</a></div>
+          </div>
+        </article>
+
+        <article class="stone">
+          <div class="stone-inner">
+            <h3>Universal Fuel Technologies Series A Pitch</h3>
+            <p class="kind">Venture pitch deck</p>
+            <p class="desc">Pitch deck for a refinery decarbonization company raising $7 to 10M. Lays out the cost problem in sustainable aviation fuel, a $50B licensing opportunity, customer traction, three revenue streams and the use of funds.</p>
+            <p class="tools">Market sizing, business model, fundraising narrative</p>
+            <div class="links"><a href="universal-fuel-technologies.pdf" target="_blank" rel="noopener">View deck (PDF)</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="lede">Open to investment banking analyst and summer analyst opportunities.</p>
+      <ul>
+        <li><a id="link-email" href="#contact">Email</a></li>
+        <li><a id="link-linkedin" href="#contact" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a id="link-github" href="#contact" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="year">2026</span> Nidhi Reddy</div>
+</footer>
+
+<script>
+  /* ====== EDIT THESE THREE VALUES, then the contact links update ====== */
+  const GITHUB_USERNAME = "nar200-art";
+  const EMAIL           = "your.email@example.com";
+  const LINKEDIN_URL    = "https://www.linkedin.com/in/your-profile";
+  /* ================================================================== */
+
+  document.getElementById("link-email").href = `mailto:${EMAIL}`;
+  document.getElementById("link-linkedin").href = LINKEDIN_URL;
+  document.getElementById("link-github").href = `https://github.com/${GITHUB_USERNAME}`;
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
